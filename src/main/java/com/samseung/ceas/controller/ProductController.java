@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,17 +17,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.data.domain.Page;
 
 import com.samseung.ceas.dto.ProductDTO;
 import com.samseung.ceas.dto.ResponseDTO;
 import com.samseung.ceas.model.ProductEntity;
 import com.samseung.ceas.service.ProductService;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -36,27 +30,6 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
-//	@GetMapping
-//	public ResponseEntity<?> retrieveProductList(Model model, @RequestParam(value="page", defaultValue="0") int page){
-//		
-//		try {
-//			
-//	        Page<ProductEntity> paging = this.productService.getList(page);
-//	        log.info("entity: " + paging.toString());
-//	        model.addAttribute("paging", paging);
-//	        
-//			List<ProductEntity> entities = productService.retrieveAll();
-//			List<ProductDTO> dtos = entities.stream().map(ProductDTO::new).collect(Collectors.toList());
-//			ResponseDTO<ProductDTO> response = ResponseDTO.<ProductDTO>builder().data(dtos).build();
-//			return ResponseEntity.ok().body(response);			
-//		}catch (IllegalStateException e) {
-//			ResponseDTO<ProductDTO> responseDTO = ResponseDTO.<ProductDTO>builder().error("Product Table is empty").build();
-//			return ResponseEntity.badRequest().body(responseDTO);
-//		}catch (Exception e) {
-//			ResponseDTO<ProductDTO> response = ResponseDTO.<ProductDTO>builder().error("An unexpected error occurred").build();
-//			return ResponseEntity.badRequest().body(response);
-//		}
-//	}
 	@GetMapping
 	public ResponseEntity<?> retrieveProductList(){
 		

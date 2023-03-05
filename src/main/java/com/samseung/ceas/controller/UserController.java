@@ -15,9 +15,7 @@ import com.samseung.ceas.model.UserEntity;
 import com.samseung.ceas.security.TokenProvider;
 import com.samseung.ceas.service.UserService;
 
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @RestController
 @RequestMapping("/auth")
 public class UserController {

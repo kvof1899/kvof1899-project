@@ -1,11 +1,8 @@
 package com.samseung.ceas.repository;
 
-import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.samseung.ceas.dto.UserDTO;
 import com.samseung.ceas.model.UserEntity;
 
 @Repository

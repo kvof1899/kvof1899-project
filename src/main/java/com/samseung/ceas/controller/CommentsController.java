@@ -20,18 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.samseung.ceas.dto.CommentsDTO;
 import com.samseung.ceas.dto.ResponseDTO;
-import com.samseung.ceas.dto.UserDTO;
 import com.samseung.ceas.model.CommentsEntity;
-import com.samseung.ceas.model.ImageEntity;
-import com.samseung.ceas.model.UserEntity;
-import com.samseung.ceas.repository.ImageRepository;
-import com.samseung.ceas.repository.UserRepository;
 import com.samseung.ceas.service.CommentsService;
 
-
-
 import lombok.RequiredArgsConstructor;
-
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -40,13 +32,8 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 public class CommentsController {
 	
-	
+	@Autowired
 	private final CommentsService commentsService;
-	private final ImageRepository imageRepository;
-	private final UserRepository userRepository;
-
-	
-	
 
 	
 	@GetMapping("/{id}/comments")
@@ -80,7 +67,7 @@ public class CommentsController {
         	
         	entity.setC_id(null);
         	entity.setCreatedDate(LocalDateTime.now());
-        	entity.setAuthor(dto.getAuthor());//해결 x
+        	entity.setAuthor("!");//해결 x
         	entity.setProductId(id);
         	
             log.info("entity: " + entity.toString());

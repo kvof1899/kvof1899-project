@@ -7,12 +7,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.samseung.ceas.dto.UserDTO;
 import com.samseung.ceas.model.CommentsEntity;
-import com.samseung.ceas.model.ImageEntity;
-import com.samseung.ceas.model.UserEntity;
 import com.samseung.ceas.repository.CommentsRepository;
-import com.samseung.ceas.repository.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -26,7 +22,6 @@ public class CommentsService {
 	@Autowired
 
 	private CommentsRepository commentsRepository;
-	private UserRepository userRepository;
 	
 	public CommentsEntity create(CommentsEntity commentsEntity) {
 		try { 
@@ -97,11 +92,4 @@ public class CommentsService {
 		}
 		return commentsRepository.findAll();
 	}
-	
-//    public Optional<UserEntity> findImage(String userId) {
-//        return userRepository.findByUserId(userId);
-//    }
-
-	
-
 }

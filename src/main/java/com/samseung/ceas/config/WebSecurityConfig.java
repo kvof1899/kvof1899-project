@@ -11,11 +11,8 @@ import org.springframework.web.filter.CorsFilter;
 
 import com.samseung.ceas.security.JwtAuthenticationFilter;
 
-import lombok.extern.slf4j.Slf4j;
-
 @Configuration
 @EnableWebSecurity
-@Slf4j
 public class WebSecurityConfig{
 	@Autowired
 	private JwtAuthenticationFilter jwtAuthenticationFilter;
