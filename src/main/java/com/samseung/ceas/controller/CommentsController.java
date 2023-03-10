@@ -40,7 +40,8 @@ public class CommentsController {
 	public ResponseEntity<?> retrieveCommentsList(@AuthenticationPrincipal String userId, @PathVariable("id") Integer id){
 		
 		try {
-			List<CommentsEntity> entities = commentsService.retrieveAll();
+			
+			List<CommentsEntity> entities = commentsService.retrieveAll(id);
 			List<CommentsDTO> dtos = entities.stream().map(CommentsDTO::new).collect(Collectors.toList());
 			
 			ResponseDTO<CommentsDTO> response = ResponseDTO.<CommentsDTO>builder().data(dtos).build();
@@ -112,7 +113,7 @@ public class CommentsController {
 			CommentsEntity entity = commentsService.retrieve(c_id);
 			commentsService.delete(entity);
 			
-			List<CommentsEntity> entities =  commentsService.retrieveAll();
+			List<CommentsEntity> entities =  commentsService.retrieveAll(id);
 			List<CommentsDTO> dtos = entities.stream().map(CommentsDTO::new).collect(Collectors.toList());
 			ResponseDTO<CommentsDTO> response = ResponseDTO.<CommentsDTO>builder().data(dtos).build();
 			return ResponseEntity.ok().body(response);

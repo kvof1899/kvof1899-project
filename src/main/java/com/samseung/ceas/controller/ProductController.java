@@ -90,7 +90,6 @@ public class ProductController {
 		try {
 			ProductEntity originalEntity = productService.retrieve(id);
 			originalEntity.setProductName(dto.getProductName());
-			originalEntity.setCategory(dto.getCategory());
 			originalEntity.setProductDescription(dto.getProductDescription());
 			
 			ProductEntity updatedEntity = productService.update(originalEntity);

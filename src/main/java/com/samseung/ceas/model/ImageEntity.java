@@ -25,9 +25,6 @@ public class ImageEntity {
     private long id;
 
     @Column
-    private long imageIdx;
-
-    @Column
     private String originalFileName;
 
     @Column

@@ -31,9 +31,6 @@ public class ProductEntity {
 	private String productName;
 	
 	@Column(nullable = false)
-	private String category;
-	
-	@Column(nullable = false)
 	private String productDescription;
 	
 	@Column

@@ -76,7 +76,6 @@ public class ImageHandler {
                 String new_image_name = System.nanoTime() + originalFileExtension;
                 // 생성 후 리스트에 추가
                 ImageEntity imageEntity = ImageEntity.builder()
-                        .imageIdx(imageID)
                         .originalFileName(multipartFile.getOriginalFilename())
                         .storedFileName(path + "/" + new_image_name)
                         .fileSize(multipartFile.getSize())

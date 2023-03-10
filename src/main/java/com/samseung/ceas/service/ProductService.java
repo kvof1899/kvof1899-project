@@ -67,7 +67,6 @@ public class ProductService {
 		final Optional<ProductEntity> originalEntity = productRepository.findById(productEntity.getId());
 		originalEntity.ifPresentOrElse((entity) -> {
 			entity.setProductName(productEntity.getProductName());
-			entity.setCategory(productEntity.getCategory());
 			entity.setProductDescription(productEntity.getProductDescription());
 			productRepository.save(entity);
 		}, () -> {

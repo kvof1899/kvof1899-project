@@ -28,7 +28,7 @@ public class PageController {
         Page<ProductEntity> productList = productRepository.findAll(pageRequest);
 
         Page<ProductDTO> pagingList = productList.map(
-                post -> new ProductDTO(post.getId(),post.getProductName(),post.getCategory(), post.getProductDescription(), post.getUserId(), post.getCreatedDate()));
+                post -> new ProductDTO(post.getId(),post.getProductName(), post.getProductDescription(), post.getUserId(), post.getCreatedDate()));
         
         //html로 넘기는 함수
         model.addAttribute("pagingList", pagingList);

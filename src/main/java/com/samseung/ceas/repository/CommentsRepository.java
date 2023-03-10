@@ -1,5 +1,6 @@
 package com.samseung.ceas.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,7 +13,7 @@ import com.samseung.ceas.model.ProductEntity;
 public interface CommentsRepository extends JpaRepository<CommentsEntity, Integer>{
 
 	Optional<CommentsEntity> findById(Integer c_id);
-	Optional<ProductEntity> findByProductId(Integer productId);
+	List<CommentsEntity> findByProductId(Integer productId);
 
 
 }

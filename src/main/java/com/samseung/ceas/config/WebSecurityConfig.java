@@ -26,7 +26,7 @@ public class WebSecurityConfig{
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and()
 			.authorizeHttpRequests()
-			.requestMatchers("/", "/auth/**").permitAll()
+			.requestMatchers("/", "/users/**").permitAll()
 			.anyRequest().authenticated();
 		
 		http.addFilterAfter(jwtAuthenticationFilter, CorsFilter.class);

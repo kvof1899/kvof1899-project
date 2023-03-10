@@ -37,10 +37,10 @@ public class CommentsService {
 		}
 	}
 	
-	public List<CommentsEntity> retrieveAll() {
-		List<CommentsEntity> list = commentsRepository.findAll();
+	public List<CommentsEntity> retrieveAll(final Integer id) {
+		List<CommentsEntity> list = commentsRepository.findByProductId(id);
 		if (list != null) {
-			return commentsRepository.findAll();
+			return list;
 		} else {
 			log.warn("Comments Table is empty");
 			throw new IllegalStateException("Comments Table is empty");
